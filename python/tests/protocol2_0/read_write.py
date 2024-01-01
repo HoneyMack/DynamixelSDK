@@ -97,11 +97,11 @@ elif MY_DXL == 'XL320':
 PROTOCOL_VERSION            = 2.0
 
 # Factory default ID of all DYNAMIXEL is 1
-DXL_ID                      = 1
+DXL_ID                      = 2
 
 # Use the actual port assigned to the U2D2.
 # ex) Windows: "COM*", Linux: "/dev/ttyUSB*", Mac: "/dev/tty.usbserial-*"
-DEVICENAME                  = '/dev/ttyUSB0'
+DEVICENAME                  = "/dev/ttyAMA0" #'/dev/ttyUSB0'
 
 TORQUE_ENABLE               = 1     # Value for enabling the torque
 TORQUE_DISABLE              = 0     # Value for disabling the torque
@@ -114,7 +114,8 @@ dxl_goal_position = [DXL_MINIMUM_POSITION_VALUE, DXL_MAXIMUM_POSITION_VALUE]    
 # Initialize PortHandler instance
 # Set the port path
 # Get methods and members of PortHandlerLinux or PortHandlerWindows
-portHandler = PortHandler(DEVICENAME)
+# portHandler = PortHandler(DEVICENAME)
+portHandler = PortHandlerExt(DEVICENAME)
 
 # Initialize PacketHandler instance
 # Set the protocol version
